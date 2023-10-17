@@ -5,5 +5,9 @@
 # Avoid your project being littered with annoying .DS_Store files!
 .DS_Store
 .idea/
-design
+design/
 style-guide.md
+node_modules/
+build/
+dist/
+.parcel-cache/
