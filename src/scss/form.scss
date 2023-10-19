@@ -21,7 +21,7 @@
     font-weight: 500;
   }
   &:hover {
-    box-shadow: 0 0 10px $basic-color-light inset;
+    box-shadow: 2px 2px 0 $basic-color inset, 2px -2px 0 $basic-color inset;
   }
 }
 

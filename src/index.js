@@ -2,8 +2,7 @@ import './scss/style.scss';
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import icon from '../img/icon-location.svg'
-import {addTileLayer, getAddress, validateIp} from './helpers'
-import {getUserAddress} from "./helpers/get-address";
+import {addOffset, addTileLayer, getUserAddress, getAddress, validateIp} from './helpers'
 
 // Globals
 const ipInput = document.querySelector('.search-input')
@@ -25,6 +24,7 @@ const markerIcon = L.icon({
 // Event attach
 document.querySelector('.search-btn').addEventListener('click', getData)
 document.addEventListener('DOMContentLoaded', () => {
+    ipInput.focus()
     getUserAddress()
         .then (({ip}) => getAddress(ip))
         .then (printInfo)
@@ -51,4 +51,8 @@ function printInfo({ip, location, isp}) {
 
     map.setView([lat, lng])
     L.marker([lat, lng], {icon: markerIcon}).addTo(map)
+
+    if (matchMedia('(max-width: 1023px)').matches){
+        addOffset(map)
+    }
 }

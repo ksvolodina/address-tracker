@@ -1,7 +1,9 @@
 @import "global";
 
 .tracker {
-  background: url(../../img/pattern-bg-desktop.png);
+  background: no-repeat url(../../img/pattern-bg-desktop.png);
+  background-size: cover;
+  height: 200px;
   padding: $offset;
   position: relative;
   text-align: center;

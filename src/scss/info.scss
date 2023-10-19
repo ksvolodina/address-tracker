@@ -16,7 +16,6 @@
     margin-right: auto;
     max-width: 1000px;
     position: relative;
-    transform: translateY(50%);
     width: 100%;
   }
 }
@@ -28,6 +27,9 @@
   margin-bottom: $offset;
   padding: 0 $offset;
   position: relative;
+  &:last-child {
+    margin-bottom: 0;
+  }
   @include respond-to(large-up) {
     border-right: 1px solid transparentize($basic-color-light, .7);
     margin-bottom: 0;
