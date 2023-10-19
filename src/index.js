@@ -1,10 +1,11 @@
+import './scss/style.scss';
 import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import icon from '../img/icon-location.svg'
 import {addTileLayer, getAddress, validateIp} from './helpers'
 
 // Globals
-const ipInput = document.querySelector('.search-bar__input')
+const ipInput = document.querySelector('.search-input')
 const ipInfo = document.querySelector('#ip')
 const locationInfo = document.querySelector('#location')
 const timezoneInfo = document.querySelector('#timezone')
@@ -21,7 +22,7 @@ const markerIcon = L.icon({
 });
 
 // Event attach
-document.querySelector('.search-bar__btn').addEventListener('click', getData)
+document.querySelector('.search-btn').addEventListener('click', getData)
 
 // Event logic
 function getData(event) {

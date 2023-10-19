@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
+
+$basic-color: hsl(0, 0%, 17%);
+$basic-color-light: hsl(0, 0%, 59%);
+$offset: 20px;
+$offset-small: 15px;
+
+@mixin respond-to($media) {
+  @if $media == large-up{
+    @media only screen and (min-width: 1024px){
+      @content;
+    }
+  }
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Rubik', sans-serif;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}

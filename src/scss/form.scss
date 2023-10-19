@@ -1,0 +1,51 @@
+@import "global";
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: $offset;
+}
+
+.search-input {
+  border-radius: 10px 0 0 10px;
+  border: none;
+  color: $basic-color;
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 500px;
+  outline: none;
+  padding: $offset-small $offset;
+  width: 100%;
+  &::placeholder {
+    color: $basic-color-light;
+    font-weight: 500;
+  }
+  &:hover {
+    box-shadow: 0 0 10px $basic-color-light inset;
+  }
+}
+
+.search-btn {
+  background-color: $basic-color;
+  border: none;
+  border-radius: 0 10px 10px 0;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  padding: 0 $offset-small;
+  position: relative;
+  &:hover {
+    background-color: lighten($basic-color, 10%);
+  }
+  &:after {
+    background: transparent;
+    border: 2px solid;
+    border-color: white white transparent transparent;
+    content: '';
+    display: block;
+    height: 7px;
+    margin-left: -6px;
+    transform: rotate(45deg);
+    width: 7px;
+  }
+}
