@@ -3,6 +3,7 @@ import 'leaflet/dist/leaflet.css'
 import L from 'leaflet'
 import icon from '../img/icon-location.svg'
 import {addTileLayer, getAddress, validateIp} from './helpers'
+import {getUserAddress} from "./helpers/get-address";
 
 // Globals
 const ipInput = document.querySelector('.search-input')
@@ -23,6 +24,11 @@ const markerIcon = L.icon({
 
 // Event attach
 document.querySelector('.search-btn').addEventListener('click', getData)
+document.addEventListener('DOMContentLoaded', () => {
+    getUserAddress()
+        .then (({ip}) => getAddress(ip))
+        .then (printInfo)
+})
 
 // Event logic
 function getData(event) {
