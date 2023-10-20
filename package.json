@@ -2,17 +2,22 @@
   "name": "addresstracker",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.html",
+  "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "start": "parcel index.html --open",
-    "build": "parcel build index.html --out-dir=build"
+    "build": "parcel build",
+    "predeploy": "npm run build",
+    "deploy": "vercel --prod"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.10.0",
     "parcel": "^2.10.0",
-    "sass": "^1.69.4"
+    "sass": "^1.69.4",
+    "vercel": "^32.4.1"
   },
   "dependencies": {
     "leaflet": "^1.9.4"
